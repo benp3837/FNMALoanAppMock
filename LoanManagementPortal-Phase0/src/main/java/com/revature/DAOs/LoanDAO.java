@@ -16,14 +16,13 @@ public class LoanDAO implements LoanDAOInterface {
 
         try(Connection conn = ConnectionUtil.getConnection()) {
 
-            //Let's start by creating the Loan, so the loans table can point to it
             String sql = "INSERT INTO loans (loan_amount, loan_status) VALUES (?, 'PENDING')";
 
             //This time we need to make sure to return the primary key (loan_id) of the new Loan
             PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setInt(1, loan.getLoanAmount());
 
-            //Execute the insert, and save the new loan id using getGeneratedKeys()
+            //Execute the insert, and save the new loan id - Thank you, getGeneratedKeys() ^
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
