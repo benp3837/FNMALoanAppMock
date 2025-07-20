@@ -7,6 +7,8 @@ import io.javalin.http.Context;
 //The Controller layer is responsible for taking in HTTP requests and sending back HTTP responses.
 public class UserController {
 
+    //TODO: Haven't added any auth stuff to these functionalities 
+
     //Instantiate a UserService to invoke its methods
     private UserService userService = new UserService();
 
