@@ -40,6 +40,7 @@ public class Main {
         app.get("/loans/pending", loanController::viewAllPendingLoansHandler); //View all pending loans
 
         //Login is a POST request, since we're sending a username and password
+        //Note the slight difference in syntax since we used a Lambda in the Controller for this one
         app.post("/auth", authController.loginHandler);
 
         //Exception handler for IllegalArgumentException
