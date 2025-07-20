@@ -39,7 +39,8 @@ public class AuthController {
             Now, we can personalize the entire app for the logged-in user
             This makes it SO EASY to do stuff like:
                 -Show a User only their own loans
-                -Show a User only their user profile*/
+                -Show a User only their user profile
+                -Determine a User's Role if they're doing something that requires certain permissions*/
 
 
             //Set the response status to 200 OK and return the logged-in user
