@@ -57,7 +57,7 @@ public class UserDAO implements UserDAOInterface{
         try (Connection conn = ConnectionUtil.getConnection()) {
 
             //create our SQL statement - just gonna do a full update
-            //we could make separate methods for more specific updating
+            //we could make separate methods or control flow for more specific updating
             String sql = "UPDATE users SET username = ?, email = ?, role = ?, password = ? WHERE user_id = ?";
 
             //use PreparedStatement to fill in the values of our variables
