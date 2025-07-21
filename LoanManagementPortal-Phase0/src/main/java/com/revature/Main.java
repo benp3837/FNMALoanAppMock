@@ -9,10 +9,13 @@ import com.revature.models.User;
 import com.revature.services.LoanService;
 import com.revature.services.UserService;
 import com.revature.utils.ConnectionUtil;
+import com.revature.utils.ConnectionUtilSQLite;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
@@ -75,5 +78,6 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
     }
 }

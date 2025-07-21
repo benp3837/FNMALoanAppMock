@@ -16,6 +16,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     implementation("org.postgresql:postgresql:42.7.7")
 
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    implementation("org.xerial:sqlite-jdbc:3.49.1.0")
+
     // https://mvnrepository.com/artifact/io.javalin/javalin
     implementation("io.javalin:javalin:6.3.0")
     //helper dependency for javalin - the logger that javalin uses
