@@ -49,11 +49,11 @@ export class UserHome implements OnInit {
 
   //edit loan modal--------------------
 
-  showModal = false;
-selectedLoan: any = {};
+showModal = false;
+selectedLoan:Loan = {};
 
 openEditModal(loan: any) {
-  this.selectedLoan = { ...loan };
+  this.selectedLoan = loan;
   this.showModal = true;
 }
 
@@ -62,7 +62,9 @@ closeEditModal() {
 }
 
 saveLoan() {
-  // Call your service to save changes
+  //Imagine we call upon the service here to send a real update
+  alert("Updated loan amount: " + this.selectedLoan.loanAmount)
+
   this.closeEditModal();
 }
 
