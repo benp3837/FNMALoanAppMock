@@ -1,1 +1,52 @@
-<p>user-home works!</p>
+<h3>Welcome, {{this.authService.loggedInUser.username}}</h3>
+
+<table class="table table-dark table-striped w-75 m-auto">
+  <thead>
+    <tr>
+      <th>Loan ID</th>
+      <th>Loan Amount</th>
+      <th>Loan Status</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let loan of loans">
+      <td>{{loan.loanId}}</td>
+      <td>{{loan.loanAmount}}</td>
+      <td>{{loan.loanStatus}}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" (click)="openEditModal(loan)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- edit loan view -->
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Loan</h5>
+        <button type="button" class="btn-close" (click)="closeEditModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label>Loan Amount</label>
+            <input type="number" [(ngModel)]="selectedLoan.loanAmount" name="loanAmount" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label>Loan Status</label>
+            <input type="text" [(ngModel)]="selectedLoan.loanStatus" name="loanStatus" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="closeEditModal()">Close</button>
+        <button class="btn btn-primary" (click)="saveLoan()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

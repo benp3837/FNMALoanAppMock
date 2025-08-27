@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<!-- Bootstrap Navbar Example -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LoanApp</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let item of items">
+          <a class="nav-link" [routerLink]="item.routerLink">
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex me-3">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+      </form>
+      <a class="nav-link text-white" [routerLink]="['/']" style="cursor:pointer;">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>

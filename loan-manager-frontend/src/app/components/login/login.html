@@ -1,1 +1,19 @@
-<p>login works!</p>
+<p-card>
+
+  <h2 class="header-text">Welcome to the Loan Application</h2>
+
+  <p class="header-text">Log in to manage your account</p>
+
+  <form (ngSubmit)="onLogin()">
+    <div class="p-field">
+      <label for="username">Username</label>
+      <input id="username" type="text" pInputText [(ngModel)]="username" name="username" placeholder="username" required />
+    </div>
+    <div class="p-field">
+      <label for="password">Password</label>
+      <input id="password" type="password" pInputText [(ngModel)]="password" name="password" placeholder="password" required />
+    </div>
+    <button pButton class="my-button" type="submit" label="Login"></button>
+  </form>
+
+</p-card>

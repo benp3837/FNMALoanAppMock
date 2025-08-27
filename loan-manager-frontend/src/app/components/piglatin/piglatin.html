@@ -1,0 +1,28 @@
+<div class="container mt-4" style="max-width: 600px;">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-3">English ➡️ Pig Latin Translator</h2>
+      
+      <div class="mb-3">
+        <label for="inputText" class="form-label">Enter your English text:</label>
+        <textarea
+          id="inputText"
+          [(ngModel)]="englishText"
+          rows="4"
+          class="form-control"
+        ></textarea>
+      </div>
+      
+      <button
+        (click)="translate()"
+        class="btn btn-primary"
+      >
+        Translate
+      </button>
+      
+      <div *ngIf="pigLatinText" class="alert alert-success mt-3">
+        <strong>Pig Latin:</strong> {{ pigLatinText }}
+      </div>
+    </div>
+  </div>
+</div>
