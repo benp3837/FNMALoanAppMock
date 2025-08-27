@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<!-- User Profile Component -->
+<div class="container mt-5">
+  <div class="card" style="max-width: 400px; margin: auto;">
+    <div class="card-header bg-dark text-white text-center">
+      {{this.authService.loggedInUser.username}}
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>User ID:</strong> 10</li>
+        <li class="list-group-item"><strong>Username:</strong> bon</li>
+        <li class="list-group-item"><strong>Email:</strong> me@email.com</li>
+        <li class="list-group-item"><strong>Role:</strong> User</li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center mt-2">
+        <button class="btn btn-dark">Edit</button>
+    </div>
+</div>
