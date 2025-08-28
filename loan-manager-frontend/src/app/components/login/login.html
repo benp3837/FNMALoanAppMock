@@ -1,23 +1,43 @@
-<p-card>
-
-  <h2 class="header-text">Welcome to the Loan Application</h2>
-
-  <p class="header-text">Log in to manage your account</p>
-
-  <form (ngSubmit)="onLogin()">
-    <div class="p-field">
-      <label for="username">Username</label>
-      <input id="username" type="text" pInputText [(ngModel)]="username" name="username" placeholder="username" required />
+<!-- Bootstrap Card -->
+<div class="card mx-auto" style="max-width: 550px; margin: 7em auto; font-size: smaller;">
+  <div class="card-body">
+    <div class="text-center">
+    <h2 class="header-text" >Welcome to the Loan Application</h2>
+    <p class="header-text">Log in to manage your account</p>
     </div>
-    <div class="p-field">
-      <label for="password">Password</label>
-      <input id="password" type="password" pInputText [(ngModel)]="password" name="password" placeholder="password" required />
-    </div>
-    <button pButton class="my-button" type="submit" label="Login"></button>
-  </form>
 
-   <a class="d-block text-center" routerLink="register">
-    New here? Register for an Account
-  </a>
+    <form (ngSubmit)="onLogin()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          id="username"
+          type="text"
+          class="form-control"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="username"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="password"
+          required
+        />
+      </div>
+      <button class="btn btn-dark d-block mx-auto" type="submit">
+        Login
+      </button>
+    </form>
 
-</p-card>
+    <a class="d-block text-center mt-3" routerLink="register">
+      New here? Register for an Account
+    </a>
+  </div>
+</div>

@@ -11,11 +11,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    providePrimeNG({
-        theme: {
-            preset: Aura
-        }
-    }),
     provideHttpClient()
   ]
 };
